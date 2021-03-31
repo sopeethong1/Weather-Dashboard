@@ -11,7 +11,7 @@ var formSubmitHandler = function (event) {
   if (cityName) {
     getUserCity(cityName);
 
-    resultContainerEL.textContent = '';
+    resultContainerEl.textContent = '';
     cityInputEl.value = '';
   } else {
     alert('Please enter a City Name');
@@ -19,7 +19,7 @@ var formSubmitHandler = function (event) {
 };
 
 var buttonClickHandler = function (event) {
-  var forecast = event.target.getAttribute('forcast');
+  var forecast = event.target.getAttribute('forecast');
 
   if (forecast) {
     getFeaturedResults(forcast);
@@ -28,34 +28,35 @@ var buttonClickHandler = function (event) {
   }
 };
 
+var myAPIKey = "b4e070a1a9ebee8165528bdabd520c33";
+var cityName = cityInputEl.value.trim();
 var getUserCity = function (user) {
-  var apiUrl = "api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=b4e070a1a9ebee8165528bdabd520c33";
+  var apiUrl = "http://api.openweathermap.org/data/2.5/forecast?q=atlanta&appid=" + myAPIKey;
 
 
   fetch(apiUrl)
     .then(function (response) {
       if (response.ok) {
-        console.log(response);
         response.json().then(function (data) {
-          console.log(data);
-          displayRepos(data, user);
+          displayResult(data);
         });
       } else {
         alert('Error: ' + response.statusText);
       }
     })
     .catch(function (error) {
-      alert('Unable to connect to GitHub');
+      alert('Unable to connect to OpenWeather');
     });
 };
 
-var getFeaturedResults = function (language) {
-  var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+console.log()
+var getFeaturedResults = function (forecast) {
+  var apiUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&current.uvi&limit=1&appid=b4e070a1a9ebee8165528bdabd520c33";
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
-        displayRepos(data.items, language);
+        displayResult(data.items, forecast);
       });
     } else {
       alert('Error: ' + response.statusText);
@@ -63,43 +64,43 @@ var getFeaturedResults = function (language) {
   });
 };
 
-var displayRepos = function (repos, searchTerm) {
-  if (repos.length === 0) {
-    resultContainerEL.textContent = 'No repositories found.';
+var displayResult = function (results, searchTerm) {
+  if (Result.length === 0) {
+    resultContainerEL.textContent = 'No data found.';
     return;
   }
 
   citySearchTerm.textContent = searchTerm;
 
-  for (var i = 0; i < repos.length; i++) {
-    var repoName = repos[i].owner.login + '/' + repos[i].name;
+  for (var i = 0; i < results.length; i++) {
+    var resultName = results[i].owner.login + '/' + results[i].name;
 
-    var repoEl = document.createElement('a');
-    repoEl.classList = 'list-item flex-row justify-space-between align-center';
-    repoEl.setAttribute('href', './single-repo.html?repo=' + repoName);
+    var resultEl = document.createElement('a');
+    resultEl.classList = 'list-item flex-row justify-space-between align-center';
+    resultEl.setAttribute('href', './single-result.html?result=' + resultName);
 
     var titleEl = document.createElement('span');
-    titleEl.textContent = repoName;
+    titleEl.textContent = resultName;
 
-    repoEl.appendChild(titleEl);
+    resultEl.appendChild(titleEl);
 
     var statusEl = document.createElement('span');
     statusEl.classList = 'flex-row align-center';
 
-    if (repos[i].open_issues_count > 0) {
+    if (results[i].open_issues_count > 0) {
       statusEl.innerHTML =
-        "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
+        "<i class='fas fa-times status-icon icon-danger'></i>" + results[i].open_issues_count + ' issue(s)';
     } else {
       statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
     }
 
-    repoEl.appendChild(statusEl);
+    resultEl.appendChild(statusEl);
 
-    resultContainerEL.appendChild(repoEl);
+    resultContainerEL.appendChild(resultEl);
   }
 };
 
-userFormEl.addEventListener('submit', formSubmitHandler);
+cityFormEl.addEventListener('submit', formSubmitHandler);
 
 
   
