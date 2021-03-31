@@ -46,8 +46,24 @@ body {
     margin-bottom: -19px;
     background-color: rgba(0,0,0,.03);
     border-bottom: 1px solid rgba(0,0,0,.125);
+    
   }
 
+  .card body {
+    text-align: left;
+    margin-left: 0px;
+    border-color: white;
+  }
+
+  #city-list {
+      margin-left: -45px;
+      border-color: WHITE;
+  }
+
+  .card
+  custom-card {
+      border-color: white;
+  }
 @media (min-width: 576px) { ... }
 
 
