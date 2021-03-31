@@ -12,11 +12,12 @@ function handleFormSubmit(event) {
   }
 
   var citySearchResultEL = $(
-    '<ul class="flex-row justify-space-between align-center p-2 bg-light text-dark">'
+    '<ul class="container-fluid align-left p-2 bg-white text-dark">'
   );
+  
   citySearchResultEL.text(cityName);
 
-  citySearchResultEL.append("  "+
+  citySearchResultEL.append("       "+ 
     '<button type="button" class="btn btn-outline-secondary btn-sm delete-item-btn">X</button>'
   );
 
@@ -24,7 +25,7 @@ function handleFormSubmit(event) {
   cityListEl.append(citySearchResultEL);
 
   // clear the form input element
-  $('input[name="city-input"]').val('');
+  $('input[name="city-name"]').val('');
 }
 
 function handleRemoveItem(event) {
@@ -32,7 +33,7 @@ function handleRemoveItem(event) {
   var btnClicked = $(event.target);
 
   // get the parent `<li>` element from the button we pressed and remove it
-  btnClicked.parent('li').remove();
+  btnClicked.parent('ul').remove();
 }
 
 // use event delegation on the `cityListEl` to listen for click on any element with a class of `delete-item-btn`
