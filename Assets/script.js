@@ -12,12 +12,12 @@ function handleFormSubmit(event) {
   }
 
   var citySearchResultEL = $(
-    '<li class="flex-row justify-space-between align-center p-2 bg-light text-dark">'
+    '<ul class="flex-row justify-space-between align-center p-2 bg-light text-dark">'
   );
-  citySearchResultEL.text(citySearch);
+  citySearchResultEL.text(cityName);
 
-  citySearchResultEL.append(
-    '<button class="btn btn-danger btn-small delete-item-btn">Remove</button>'
+  citySearchResultEL.append("  "+
+    '<button type="button" class="btn btn-outline-secondary btn-sm delete-item-btn">X</button>'
   );
 
   // print to the page
