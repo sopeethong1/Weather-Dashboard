@@ -34,10 +34,18 @@ body {
     font-style: italic;
   }
 
-  .card h3{
+  .card h4{
       text-align: left;
       background-color: white;
       border-color: white;
+      padding-left: 25px;
+  }
+
+  .card-header {
+    padding: -2.25rem 1.25rem;
+    margin-bottom: -19px;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
   }
 
 @media (min-width: 576px) { ... }
