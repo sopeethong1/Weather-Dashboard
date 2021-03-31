@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 16px;
@@ -14,7 +15,38 @@ body {
     color: black;
   }
   
+
+  .jumbotron {
+    height:50px;
+   padding-top: 0;
+   padding-bottom: 0;
+    background-color: #40464c!important;
+  }
+
+  .jumbotron h1{
+    color: white;
+    line-height: 0.2;
+  }
+
+
   .byline {
     font-weight: 200;
     font-style: italic;
   }
+
+  .card h3{
+      text-align: left;
+      background-color: white;
+      border-color: white;
+  }
+
+@media (min-width: 576px) { ... }
+
+
+@media (min-width: 768px) { ... }
+
+
+@media (min-width: 992px) { ... }
+
+
+@media (min-width: 1200px) { ... }
