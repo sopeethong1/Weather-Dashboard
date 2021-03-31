@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Results | Weather Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/69b78466c6.js"></script>
+  <link rel="stylesheet" href="./Assets/reset.css">
+  <link rel="stylesheet" href="./Assets/style.css">
+</head>
+
+<body>
+
+    <header class="jumbotron jumbotron-fluid"> 
+        <div class="container text-center">
+         <h1>Weather Dashboard</h1>
+   
+     </header>
+     
+       <main class="container-fluid" id="my-5 mx-auto">
+           <div class="row">
+             <section class="col-12 col-md-4 col-lg-3">
+               <div class="card custom-card">
+           <h4 class="card-header">Search for City:</h4>
+           <form id="city-form" class="card-body text-left">
+             <input type="text" class="form-input" id="city-input" name="city-name" placeholder="Enter City Name" />
+             <button class="btn btn-primary"><i class='fa fa-search'></i></button>
+           </form></div>
+    
+           <div class="card custom-card"><div class="card-body text-left">
+               <ul id="city-list"></ul></div></div>
+   
+             </div>
+           </div>
+         </section>
+       </main>
+       <div class="col-12 col-md-8">
+        <h2 class="subtitle">Showing Repositories for: <span id="city-search-term"></span></h2>
+        <div id="result-container" class="list-group"></div>
+      </div>
+ 
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Topic</h3>
+        <div id="language-buttons" class="card-body">
+          <button class="forecast" class="btn">1</button>
+          <button class="forecast" class="btn">2</button>
+          <button class="forecast" class="btn">3</button>
+        </div>
+
+      <a href="./index.html" class="btn btn-block btn-danger">&larr; Go back.</a>
+    </div>
+
+    <div class="col-12 col-md-9 p-3 text-light">
+      <h2>Showing results for <span id="result-text"></span></h2>
+      <div id="result-content"></div>
+    </div>
+  </div>
+
+  <  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <script src="./Assets/results-display.js"></script>
+</body>
+
+</html>

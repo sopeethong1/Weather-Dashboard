@@ -33,69 +33,14 @@
           <button class="btn btn-primary"><i class='fa fa-search'></i></button>
         </form></div>
  
-        <ul id="city-list"></ul>
+        <div class="card custom-card"><div class="card-body text-left">
+            <ul id="city-list"></ul></div></div>
 
           </div>
         </div>
       </section>
     </main>
-      <section class="col-12 col-md-8 col-lg-9">
-    
- 
-
-  <!-- Modal -->
-  <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
-    aria-labelledby="project-modal-form" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="project-modal-form">Add a new project.</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="project-form">
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="project-name-input">Project Name</label>
-              <input type="text" id="project-name-input" class="form-control" placeholder="Enter the project's name"
-                required />
-            </div>
-
-            <div class="form-group">
-              <label for="project-type-input">Project Type</label>
-              <select class="form-control" id="project-type-input">
-                <option selected disabled>Pick one...</option>
-                <option value="Web Application (Front End)">Web Application (Front End)</option>
-                <option value="Web Application (Back End)">Web Application (Back End)</option>
-                <option value="Web Application (Full Stack)">Web Application (Full Stack)</option>
-                <option value="Mobile Application">Mobile Application</option>
-                <option value="Print Campaign">Print Campaign</option>
-                <option value="Digital Marketing Campaign">Digital Marketing Campaign</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="hourly-rate-input">Hourly Rate ($)</label>
-              <input type="number" id="hourly-rate-input" class="form-control" placeholder="$" min="0" required />
-            </div>
-
-            <div class="form-group">
-              <label for="due-date-input">Due Date</label>
-              <input type="text" min='1' id="due-date-input" class="form-control" placeholder="When is the project due?"
-                required />
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn custom-btn">Submit Project Info</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
+     
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
